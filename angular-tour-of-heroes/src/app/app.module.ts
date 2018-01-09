@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 
+import { HeroService } from './hero.service.ts';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
     BrowserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [HeroService, MessageService], // The providers array tells Angular to create a single, shared instance of HeroService and inject into any class that asks for it.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
