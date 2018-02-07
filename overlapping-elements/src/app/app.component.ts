@@ -1,9 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  // styles: ['.mat-tooltip {white-space: pre-line;}','.overlap_hidden {position: absolute !important;}'],
+  styleUrls: [
+  	'./app.component.css'
+  ],
+  encapsulation: ViewEncapsulation.None
 })
 export class AppComponent {
   title = 'app';
@@ -13,9 +16,6 @@ export class AppComponent {
 		'dd-mm-yyyy'
 	]
 
+	public dateFormatSelect = '';
 	public dateFormat = 'dd/mm/yyyy';
-
-	public onDateChange() {
-		console.log("Date changed to ",this.dateFormat);
-	}
 }
